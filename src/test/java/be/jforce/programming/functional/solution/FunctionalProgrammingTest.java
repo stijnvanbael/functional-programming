@@ -60,7 +60,19 @@ import static org.junit.Assert.assertThat;
 
 
 
+
+
+
+
+
+
+
+
+
 public class FunctionalProgrammingTest {
+
+    private List<Tweet> tweets = Arrays.asList(TWEET_1, TWEET_2, TWEET_3, TWEET_4, TWEET_5, TWEET_6, TWEET_7, TWEET_8, TWEET_9);
+    private UserRepository userRepository = new UserRepository(LISA, STEPHEN, ROBERT);
 
     @Test
     public void tweetsWithHashtagJava8() {
@@ -162,9 +174,6 @@ public class FunctionalProgrammingTest {
         assertThat(usersForTweet.get(TWEET_7), is(Arrays.asList(ROBERT)));
         assertThat(usersForTweet.get(TWEET_9), is(Arrays.asList(LISA, ROBERT)));
     }
-
-    private List<Tweet> tweets = Arrays.asList(TWEET_1, TWEET_2, TWEET_3, TWEET_4, TWEET_5, TWEET_6, TWEET_7, TWEET_8, TWEET_9);
-    private UserRepository userRepository = new UserRepository(LISA, STEPHEN, ROBERT);
 
     private static final User LISA = new User("@LisaA", "Lisa Andersen");
     private static final User STEPHEN = new User("@steveonjava", "Stephen Chin");
