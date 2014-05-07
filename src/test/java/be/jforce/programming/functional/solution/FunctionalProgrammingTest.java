@@ -11,8 +11,8 @@ import java.util.Map;
 
 import static java.util.stream.Collectors.*;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.number.OrderingComparison.lessThan;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 /**
  *          _
@@ -165,7 +165,7 @@ public class FunctionalProgrammingTest {
                         .collect(toList())));
         long duration = System.currentTimeMillis() - start;
 
-        assertThat(duration, lessThan(500L));
+        assertTrue(duration < 500L);
         assertThat(usersForTweet.size(), is(6));
         assertThat(usersForTweet.get(TWEET_3), is(Arrays.asList(LISA)));
         assertThat(usersForTweet.get(TWEET_4), is(Arrays.asList(STEPHEN)));
